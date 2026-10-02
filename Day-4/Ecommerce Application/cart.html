@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navigation */
+
+        nav {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 30px;
+            box-shadow: 0 2px 8px gray;
+        }
+
+        .logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+        }
+
+        nav ol {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav ol li a {
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        nav ol li a:hover {
+            color: orange;
+        }
+
+        .cart-container {
+            width: 90%;
+            margin: 40px auto;
+        }
+
+        .cart-container h1 {
+            margin-bottom: 25px;
+        }
+
+        .cart-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .cart-items {
+            background-color: white;
+            width: 70%;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .cart-item img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-details h2 {
+            margin-bottom: 10px;
+        }
+
+        .product-details p {
+            color: gray;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .quantity button {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .quantity span {
+            font-size: 16px;
+        }
+
+        .remove {
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .remove:hover {
+            background-color: #cc0000;
+        }
+
+        .cart-summary {
+            background-color: white;
+            width: 30%;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px #ddd;
+        }
+
+        .cart-summary h2 {
+            margin-bottom: 20px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+
+        .total {
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .checkout {
+            width: 100%;
+            padding: 14px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 17px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .checkout:hover {
+            background-color: darkgreen;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <img class="logo"
+            src="https://content.jdmagicbox.com/comp/vijayawada/p6/0866px866.x866.191206192017.h4p6/catalogue/dk-mart-ashok-nagar-vijayawada-supermarkets-3757xusrmy.jpg"
+            alt="DK Mart">
+
+        <ol>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="registration.html">Register</a></li>
+        </ol>
+
+    </nav>
+
+    <div class="cart-container">
+
+        <h1>🛒 Shopping Cart</h1>
+
+        <div class="cart-content">
+
+            <!-- Cart Items -->
+
+            <div class="cart-items">
+
+
+                <div class="cart-item">
+
+                    <img src="https://static.vecteezy.com/system/resources/thumbnails/050/177/034/small/smart-watch-isolated-on-transparent-background-png.png"
+                        alt="Smart Watch">
+
+                    <div class="product-details">
+
+                        <h2>Smart Watch</h2>
+
+                        <p>Fitness Smart Watch with multiple features</p>
+
+                        <div class="price">₹2,499</div>
+
+                        <div class="quantity">
+
+                            <button onclick="decreaseQuantity(1)">−</button>
+
+                            <span id="quantity1">1</span>
+
+                            <button onclick="increaseQuantity(1)">+</button>
+
+                        </div>
+
+                    </div>
+
+                    <button class="remove" onclick="removeProduct(this)">
+                        Remove
+                    </button>
+
+                </div>
+
+
+                <div class="cart-item">
+
+                    <img src="https://media.istockphoto.com/id/1372906882/photo/modern-blue-wireless-headphones-isolated-on-white-background-with-clipping-path.jpg?s=612x612&w=0&k=20&c=0k-2JFElEQ0QTvXsgtLx3i2JotQo_Eb8aEwyN-BOZjA="
+                        alt="Headphones">
+
+                    <div class="product-details">
+
+                        <h2>Wireless Headphones</h2>
+
+                        <p>High quality wireless headphones</p>
+
+                        <div class="price">₹1,499</div>
+
+                        <div class="quantity">
+
+                            <button onclick="decreaseQuantity(2)">−</button>
+
+                            <span id="quantity2">1</span>
+
+                            <button onclick="increaseQuantity(2)">+</button>
+
+                        </div>
+
+                    </div>
+
+                    <button class="remove" onclick="removeProduct(this)">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+                <h2>Order Summary</h2>
+
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span>₹3,998</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Delivery</span>
+                    <span>₹50</span>
+                </div>
+
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span>₹4,048</span>
+                </div>
+
+                <button class="checkout">
+                    Proceed to Checkout
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function increaseQuantity(productNumber) {
+
+            let quantity = document.getElementById(
+                "quantity" + productNumber
+            );
+
+            let value = Number(quantity.innerText);
+
+            value++;
+
+            quantity.innerText = value;
+        }
+
+
+        function decreaseQuantity(productNumber) {
+
+            let quantity = document.getElementById(
+                "quantity" + productNumber
+            );
+
+            let value = Number(quantity.innerText);
+
+            if (value > 1) {
+                value--;
+            }
+
+            quantity.innerText = value;
+        }
+
+
+        function removeProduct(button) {
+
+            let product = button.parentElement;
+
+            product.remove();
+        }
+
+    </script>
+
+</body>
+
+</html>
