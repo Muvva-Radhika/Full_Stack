@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job-Application</title>
+    <style>
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            background-image: url("https://t3.ftcdn.net/jpg/05/88/24/10/360_F_588241010_cdQJ2QTsyDtt36jZsAFR45aAXICnPAzR.jpg");
+            background-size: cover;
+            background-position: center;
+        }
+
+        fieldset {
+            border: none;
+            padding: 30px;
+            border-radius: 10px 30px;
+            box-shadow: 10px 10px 30px 20px aliceblue;
+            backdrop-filter: blur 5px;
+            animation-name: scaling;
+            animation-duration: 5s;
+        }
+
+        @keyframes scaling {
+            0% {
+                transform: scale(0);
+            }
+
+            100% {
+                transfrom: scale(1.2);
+            }
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 5px 30px;
+            font-weight: bold;
+            border: none;
+        }
+
+        button:hover {
+            color: aliceblue;
+
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: gray;
+            border: none;
+            box-shadow: 4px 4px 4px aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <>
+            <legend>Job Application Form</legend>
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="firstname" placeholder="Enter First Name">
+            <br>
+            <br>
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Enter Last Name">
+            <br>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+            <br>
+            <br>
+            <label for="phonenumber">Phone Number</label>
+            <input type="tel" pattern="[6-9][0-9]{9 }" id="phonenumber" name="phonenumber" placeholder="+91">
+            <br>
+            <br>
+
+            <label for="gender">Gender</label>
+            <input type="radio" id="gender" name="gender">Male
+            <input type="radio" id="gender" name="gender">Female
+            <input type="radio" id="gender" name="gender">others
+            <br>
+            <br>
+
+            <label for="clgname">College Name</label>
+            <input type="text" id="clgname" name="clgname">
+            <br>
+            <br>
+
+            <label>State</label>
+            <br>
+            <br>
+
+            <label for="state">State</label>
+            <select id="state" name="state">
+                <option>select state</option>
+                <option>Andhra Pradesh</option>
+                <option>Telengana</option>
+                <option>Karnataka</option>
+                <option>Uttar Pradesh</option>
+                <option>Bihar</option>
+            </select>
+            <br>
+            <br>
+            <label for="">Adress</label>
+            <textarea rows="3" cols="30" placeholder="Enter full Adress"></textarea>
+            <label for="skills">Skills</label>
+            <select id="skills" name="skills">
+                <option>select Skill</option>
+                <option>Java SpringBoot</option>
+                <option>API Integration</option>
+                <option>PostMan</option>
+                <option>SQL</option>
+                <option>MYSQL</option>
+                <option>React.js</option>
+            </select>
+            <br>
+            <br>
+            <label for="lang">Language</label>
+            <select id="lang" name="lang">
+                <option>Select Language</option>
+                <option>English</option>
+                <option>Telugu</option>
+                <option>Hindi</option>
+                <option>Kannada</option>
+            </select>
+            <br>
+            <br>
+            <label for="resume">Resume</label>
+            <input type="file" id="resume" name="resume">
+            <br>
+            <br>
+
+            <button type="submit">Submit Application</button>
+            <br>
+            </fieldset>
+    </form>
+</body>
+
+</html>
