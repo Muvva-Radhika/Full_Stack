@@ -1,0 +1,59 @@
+CRUD operations in object
+  Retrive: obj_name.key_name;
+  Update:  obj_name.key_name=new_value;
+          Insert a new key and value:  obj_name.new_key_name=value;
+  Delete fields:
+    delete obj_name.key_name;
+
+
+
+    Object Inbuilt functions
+      Object.keys() -> gets only key names in the object in the form of an array
+      Object.values() -> only values as array
+      Object.entries() -> both keys and values as 2d array  
+          eg:  [[role:dev],[name:D],....]  
+      Object.seal() -> can't insert or delete any fields but we can update the values
+           to check whether the object is frozen then use console.log(object.issealed());
+      Object.freeze() -> can't insert,update or delete the values into object
+          to check whether the object is frozen then use console.log(object.isfrozen());
+    
+
+    Functions:
+      ->Block of statements which will be executed when it is called.
+      ->There are reusable.
+      ->Using fuctions we can increase code readability
+      Types of functions:
+        In JS fuctions are classified into 10 types:
+          Anonymous
+          Named/Normal
+          Functional Expression
+          First class functions
+          Immediate invoking (IIF) / Self calling
+          Arrow(Introduced in ES6)
+          Nested functions
+          Higher order
+          call back
+          Generator 
+      
+      Anonymous fuctions:
+           This doesn't have a name
+           Systax:
+             function() {
+              console.log();
+              console.log();
+              console.log();
+             }
+            This can't be called but used to create functional Expression
+              let FunExample=function(){
+
+              }
+              when we call the variable then function is executed.  FunExample();
+
+            Normal function:
+               function displayDetails(){
+                let emp={name='Divya';,email:'divya@gmail.com'};
+                console.log(emp);
+               }
+
+               hoisting a variable or function works for named functionn but not for anonymous function
+                hoisting means using any variable or function before declaration.
