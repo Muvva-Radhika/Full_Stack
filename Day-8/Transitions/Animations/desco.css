@@ -1,0 +1,39 @@
+body {
+    margin: 0px;
+    height: 100vh;
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: desco 2s linear 2s infinite alternate;
+}
+
+h2 {
+    background-color: greenyellow;
+}
+
+@keyframes desco {
+    0% {
+        background-color: antiquewhite;
+    }
+
+    15% {
+        background-color: azure;
+    }
+
+    30% {
+        background-color: aqua;
+    }
+
+    60% {
+        background-color: red;
+    }
+
+    75% {
+        background-color: chocolate;
+    }
+
+    100% {
+        background-color: blueviolet;
+    }
+}
