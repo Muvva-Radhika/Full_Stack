@@ -1,53 +1,161 @@
-Arrow Function:
-->Arrow function is used to reduce the syntax of the function
-->Arrow function are introduced in the vefsion ES6
-->Arrow function follows three rules
-  (i) If arrow function contains more than one statement keep in braces {}
-  (ii)If arrow function contains return keyword then also keep it in braces {}
-  (iii) In arrow functions this keyword works differently(if we are accessing this keyword in arrow function it will be target windows object)
+Arrow function
+  arrow functions are used to reduce the sntax of he function
+  Introduced he version ES6
+  They are three rules:
+   - if arrow function contains more than one statements keep in braces
+   - If arrow function contains return keyword than it also keep in braces.
+   - in arrow functions this keyword works differently.(If you are accessing in this keyword in arrow function it will be target windows        object)
+       let arrfun =()=>console.log("This is the arrow function")
+         arrfun();
+         arrfun();
+it is one of the es6 feature;
+let obj={                                                      
+      name:"sai",
+      age:20,
+     fun:()=>{
+           console.log(this.age);          
+}
+}
+  obj.fun()
+
+//output: undefined
+
+we are using anonymous function then we print the age is 20
+let obj={                                                      
+      name:"sai",
+      age:20,
+     fun:function(){
+           console.log(this.age);          
+}
+}
+  obj.fun()
+
+//arrow function syntax example
+ let arrfun()=>{
+    let a=10;
+    console.log("This is the arrow function")
+    console.log(a);
+}
+arrfun();
+
+//arrow function with parameters
+     const loginDetails = (username, password)=>{
+             console.log(`username: ${username}`);
+             console.log(`password: ${password}`);
+             return "Login Successful"; 
+}
+let res=loginDetails("admin","Daddy@08")
+console.log(res);
+console.log(loginDetails("user!12", "user#123")
+        
+7.nested function
+GEC(Global Execution context)- like a jvm in java
+It has two faces- variable face and functional face
+   function outerfun()
+                  console.log("outer function is executing....");
+                 let a=10;
+             function innerfun(){
+                console.log("Inner function executing....");
+                console.log(a);
+}
+}
+outerfunc();
+
+function outerfun()
+                  console.log("outer function is executing....");
+                 let a=10;
+             function innerfun(){
+                console.log("Inner function executing....");
+                return a++;
+}
+return innerfun;
+}
+outerfunc();
+   let result=outerfun();
+   console.log(result());
+   console.log(result());  
+   console.log(result());                
+
+   
+                 
+the ability of search a variable in the searchengine then it is a blockscope is called lexicalscope.
 
 
 
-Nested Function:
-->Function inside another function
-GEC(Global Execution Context) like a jvm in java
-It has two faces - variable face and functional face
-
-Lexical Scope-This is the ability of search a variable in the search engine then it is a block scope is called Lexical scope
 
 
-Higher Order Function:
-->Any function accept another function as parameter
+8.high order function
+ any functions accept another function as parameter
+  function homepage(){
+           console.log("This is home page");
+      function loginpage(){
+          console.log("User login successfully");
+}
+function registerpage(){
+     console.log("user registered successfully");
+}
+homepage(registerpage(), loginpage());
 
-Call Back Function:
-->Any functions that will be passed as a parameter to the higher order functions that functions are called as call back functions 
+function display(setvalues, getvalues){
+    setvalues();
+    getvalues();
+}
+display(()=>)
+9.call back function
 
-Generator Function:
-->Used when we don't know how many times the function should be called
+- any functions that we will be passed has a parameter to the higher order function that functions is called as call back functions.
+ function homepage(){
+           console.log("This is home page");
+      function loginpage(){
+          console.log("User login successfully");
+}
+function registerpage(){
+     console.log("user registered successfully");
+}
+homepage(registerpage(), loginpage());
+  registerpage(), loginpage() - these are all call back functions.
 
 
-JSON Function(JavaScript Object Notation):
-->JSON is similar to JavaScript Object
-->JSON in built functions
-   (i)JSON.Stringify(which json object you want to convert into string is passed here)
-   (ii)JSON.parse(which string you want to convert into object)
+10.generator function
+- generator function 
 
 
-BOM(Browser Object Model):
-->Each and every closures contains browser object Model
-->Browser object model contains in built windows object
-->Inbuilt windows functions:
-   innerHeight()
-   innerWidth()
-   outerHeight()
-   outerWidth()
-   windows.open()
-   windows.close()
-   windows.resize()
-   alert()
-   confirm()
-   prompt()
-   sessionStorage()
-   localStorage()
-   cookies()
-   DOM()
+ function* generatorfunc(){
+      yield a=10;
+      yield b=20;
+      console.log("This is generator");
+     }
+   let res=generatorfunc();
+   console.log(res.next().value);
+   console.log(res.next().value);
+
+
+//how may times to call the function you don't know then you use this function.
+
+//function with parameters
+   whenever we want to give input to the function then we need to use function with parameter.
+   function login(
+
+JSON - javascript object Notation
+- JSON is similar javascript object.
+- JSON inbuilt functions
+ 1.JSON.Stringify()-to convert json to string
+ 2.JSON.Parse()- to convert string into object
+
+  let json1={
+       "name":"ashok";
+        "age":30;
+        "Proffession":"Java full stack developer"
+}
+BOM-Browser object model
+ -each and every browser contain browser object model
+ - BOM contains inbuilt windows object
+windows inbuilt functions:
+1.innerHeight();
+2.innerWidth();
+3.outerHeight();
+5.outerWidth();
+4.windows.open(); - to open one window to another window
+6.windows.close();
+7.windows.resize();
+8.alert(), confirm(), prompt(), sessionStorage(), localStorage(), cookies(), DOM()
